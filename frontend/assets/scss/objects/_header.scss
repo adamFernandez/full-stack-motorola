@@ -5,7 +5,7 @@
 
 .header {
   @include mixins.container;
-  @include mixins.fixed($bottom: auto);
+  @include mixins.sticky();
   @include mixins.flex($justify: center);
   @include mixins.transition;
   padding-top: var(--trench);
