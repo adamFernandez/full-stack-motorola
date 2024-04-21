@@ -1,0 +1,21 @@
+/* Header */
+
+@use '../mixins';
+@use '../settings/breakpoints';
+
+.header {
+  @include mixins.container;
+  @include mixins.fixed($bottom: auto);
+  @include mixins.flex($justify: center);
+  @include mixins.transition;
+  padding-top: var(--trench);
+  padding-bottom: var(--trench);
+  text-transform: uppercase;
+  font-size: var(--type-xl);
+  color: var(--dark);
+  z-index: 1;
+
+  &--light {
+    color: var(--white);
+  }
+}
