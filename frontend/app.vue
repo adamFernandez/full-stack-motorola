@@ -15,14 +15,29 @@ const regions = data.value.reduce((r, d) => {
   return r;
 }, []);
 
-const filteredData = (country, region) => {
-  let filtered = data.value;
+const filtered = ref(data.value);
+const filteredData = (country, region, search) => {
   if (country || region)
-    filtered = data.value.filter(
+    filtered.value = data.value.filter(
       (c) => c.country === country || c.region === region
     );
 
-  return filtered;
+  if (searchInput.value)
+    filtered.value = data.value.filter(
+      (c) =>
+        c.name.toLowerCase().includes(search.toLowerCase()) ||
+        c.email.toLowerCase().includes(search.toLowerCase())
+    );
+
+  return filtered.value;
+};
+const searchInput = ref("");
+const find = () => {
+  filtered.value = data.value.filter(
+    (c) =>
+      c.name.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+      c.email.toLowerCase().includes(searchInput.value.toLowerCase())
+  );
 };
 </script>
 <template>
@@ -44,21 +59,8 @@ const filteredData = (country, region) => {
         />
       </div>
     </div>
-    <div class="section">
-      <Table :data="filteredData(selectedCountry, selectedRegion)" />
-    </div>
   </div>
+  <InputField :name="'search'" :label="'Search'" v-model="searchInput" />
+
+  <Table :data="filteredData(selectedCountry, selectedRegion, searchInput)" />
 </template>
-<style lang="scss">
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  justify-content: center;
-  justify-items: center;
-  gap: 1em;
-  width: 100%;
-  .section {
-    width: 80%;
-  }
-}
-</style>
