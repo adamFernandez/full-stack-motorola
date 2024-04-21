@@ -1,0 +1,134 @@
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+em,
+li,
+pre,
+span,
+input,
+label,
+button,
+summary,
+figcaption,
+textarea,
+legend,
+address,
+cite,
+dt,
+dd,
+th,
+td {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+strong,
+address,
+cite {
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+}
+
+a,
+input,
+label,
+button,
+summary,
+select,
+textarea,
+dialog {
+  outline: none;
+  background-color: transparent;
+}
+
+a,
+button,
+select {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+select {
+  border: none;
+  padding: 0;
+}
+
+input,
+iframe,
+fieldset,
+legend,
+textarea,
+dialog {
+  border: 0;
+  padding: 0;
+}
+
+input,
+textarea {
+  border-radius: 0;
+}
+
+select,
+input:matches(
+    [type='text'],
+    [type='email'],
+    [type='number'],
+    [type='button'],
+    [type='submit'],
+    [type='reset']
+  ) {
+  appearance: none;
+}
+
+/* number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+} // Chrome, Safari, Edge, Opera
+input[type='number'] {
+  appearance: textfield;
+} // Firefox
+
+summary {
+  cursor: pointer;
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+ul,
+ol {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+}

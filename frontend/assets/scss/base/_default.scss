@@ -1,0 +1,33 @@
+/* Default */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img,
+picture,
+figure,
+svg {
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+img,
+video {
+  object-fit: cover;
+}
+
+svg {
+  width: auto;
+  height: 100%;
+  fill: currentColor;
+}
