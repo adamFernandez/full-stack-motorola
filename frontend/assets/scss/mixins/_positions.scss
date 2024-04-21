@@ -1,0 +1,24 @@
+/* Positions */
+
+@mixin absolute($top: 0, $bottom: 0, $left: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  margin: auto;
+}
+
+@mixin fixed($top: 0, $bottom: 0, $left: 0, $right: 0) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  margin: 0;
+}
+
+@mixin sticky($top: 0) {
+  position: sticky;
+  top: $top;
+}

@@ -1,0 +1,15 @@
+/* Flex */
+
+@mixin flex(
+  $direction: row,
+  $wrap: nowrap,
+  $align: center,
+  $justify: center,
+  $display: flex
+) {
+  display: $display;
+  flex-flow: $direction $wrap;
+  align-items: $align;
+  justify-content: $justify;
+  @content;
+}

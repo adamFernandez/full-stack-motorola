@@ -1,0 +1,6 @@
+/* Grids */
+
+@mixin grid {
+  display: grid;
+  @content;
+}
