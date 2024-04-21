@@ -1,0 +1,21 @@
+/* Section */
+
+@use "../mixins";
+
+.section {
+  @include mixins.content;
+  padding-top: var(--moat);
+  padding-bottom: var(--moat);
+  @include mixins.flex($direction: row) {
+    gap: var(--trench);
+  }
+}
+section {
+  border-bottom: 3px solid black;
+  padding-bottom: var(--gutter);
+}
+
+.main {
+  padding: 2em;
+  font-family: var(--sans);
+}

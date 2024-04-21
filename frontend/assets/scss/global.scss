@@ -17,3 +17,6 @@
 /* Elements - smaller parts (atoms) and firts level components (molecules) */
 @use 'elements/field';
 @use 'elements/table';
+
+/* Objects – sections and layouts to arrange elements */
+@use 'objects/section';
