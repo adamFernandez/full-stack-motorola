@@ -6,6 +6,12 @@ const countries = data.value.reduce((a, d) => {
   }
   return a;
 }, []);
+const regions = data.value.reduce((r, d) => {
+  if (!r.includes(d.region)) {
+    r.push(d.region);
+  }
+  return r;
+}, []);
 </script>
 <template>
   <!-- <Table :data="people" /> -->
