@@ -42,8 +42,9 @@ const find = () => {
 </script>
 <template>
   <NuxtLayout>
-    <h3 class="heading">Filters:</h3>
-    <!-- <Filters :data="data" :names="['country', 'region']" /> -->
+    <section class="section--left">
+      <h3>Filters:</h3>
+    </section>
     <div class="section">
       <InputSelect
         :name="'Country'"
