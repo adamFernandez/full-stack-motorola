@@ -11,5 +11,8 @@
 @use "settings/sizes";
 @use "settings/speeds";
 
+/* Mixins and Functions - forwarded by mixins/index.scss */
+// @use 'mixins'; directly imported in files that use it
+
 /* Elements - smaller parts (atoms) and firts level components (molecules) */
 @use "elements/field";
