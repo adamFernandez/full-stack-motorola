@@ -1,8 +1,7 @@
 <script setup>
-const people = await useFetch("http://localhost:3500/data.json");
+const { data: people } = await useFetch("http://localhost:3500/data.json");
 </script>
 <template>
-  <div>
-    {{ people }}
-  </div>
+  <Table :data="people" />
 </template>
+s
