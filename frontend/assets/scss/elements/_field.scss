@@ -1,7 +1,7 @@
 /* Field Input */
 
-@use "../settings/breakpoints";
-@use "../mixins";
+@use '../settings/breakpoints';
+@use '../mixins';
 
 .field {
   display: block;
@@ -41,7 +41,6 @@
 
 .field__select {
   font-family: var(--sans);
-  text-transform: uppercase;
   font-size: var(--type-xxs);
   border: 0.1rem solid var(--dark);
   border-radius: var(--radius-md);
