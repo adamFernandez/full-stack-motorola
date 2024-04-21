@@ -1,0 +1,30 @@
+/* Sizes */
+
+@use '../settings/breakpoints';
+
+:root {
+  @media only screen and (max-width: breakpoints.$narrow) {
+    --h-header: 7.6rem;
+    --h-footer: auto;
+  }
+  @media only screen and (min-width: (breakpoints.$narrow + 1)) {
+    --h-header: 8rem;
+    --h-footer: clamp(30rem, 30vh, 40rem);
+  }
+
+  --h-half: 50vh;
+  --h-viewport: 100vh;
+  --h-full: calc(100vh - var(--h-header));
+
+  --h-input: 3.6rem;
+
+  --h-button: clamp(3rem, 10vw, 3.6rem);
+  --w-button: clamp(13rem, 30vw, 18.8rem);
+
+  --radius-xl: 4rem;
+  --radius-lg: 3.2rem;
+  --radius-md: 0.6rem;
+
+  --w-wide: 102.6rem;
+  --w-narrow: 60rem;
+}

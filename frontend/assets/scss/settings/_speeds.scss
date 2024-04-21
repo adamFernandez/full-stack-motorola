@@ -1,0 +1,8 @@
+/* Speeds */
+
+:root {
+  --speed-fast: 0.1s;
+  --speed-standard: 0.3s;
+  --speed-slow: 0.5s;
+  --bezier: cubic-bezier(0.23, 0.83, 0.23, 0.83);
+}

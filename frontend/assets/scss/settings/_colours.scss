@@ -1,0 +1,20 @@
+/* Colours */
+
+// Thanks to https://chir.ag/projects/name-that-color
+$white: #fff;
+$black: #000;
+$alto: #e0e0e0;
+$gray: #808080;
+$blue: #1571bd;
+$dark: #11558e;
+$cream: #e7f4ff;
+
+:root {
+  --white: #{$white};
+  --black: #{$black};
+  --blue: #{$blue};
+  --dark: #{$dark};
+  --cream: #{$cream};
+  --off: #{$alto};
+  --grey: #{$gray};
+}

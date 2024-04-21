@@ -1,0 +1,35 @@
+/* Typefaces */
+
+:root {
+  --type-mini: clamp(0.9rem, 3vw, 1rem);
+  --type-xxs: clamp(1.2rem, 3vw, 1.4rem);
+  --type-xs: clamp(1.4rem, 3vw, 1.6rem);
+  --type-sm: clamp(1.6rem, 3vw, 1.8rem);
+  --type-md: clamp(1.8rem, 3vw, 2rem);
+  --type-lg: clamp(2rem, 3vw, 2.4rem);
+  --type-xl: clamp(2.4rem, 3vw, 3.6rem);
+  --type-xxl: clamp(5.2rem, 10vw, 6.4rem);
+  --type-maxi: clamp(3.2rem, 10vw, 8.4rem);
+
+  --thin: 100;
+  --extralight: 200;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --demi: 600;
+  --bold: 700;
+  --ultra: 800;
+  --black: 900;
+
+  --ls: 0.05rem;
+
+  --lh-sm: 1;
+  --lh-md: 1.1666667;
+  --lh-lg: 1.5;
+
+  --serif: 'Rubik', sans-serif;
+  --sans: 'Rubik', sans-serif;
+  --thick: 'Rubik', sans-serif;
+  --mono: monospace;
+  --cursive: cursive;
+}
