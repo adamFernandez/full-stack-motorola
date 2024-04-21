@@ -1,0 +1,10 @@
+/* Transitions */
+
+@mixin transition(
+  $property: all,
+  $duration: var(--speed-standard),
+  $timing-function: ease-in-out,
+  $delay: 0s
+) {
+  transition: $property $duration $timing-function $delay;
+}
