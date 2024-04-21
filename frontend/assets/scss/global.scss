@@ -1,0 +1,12 @@
+/* Base - reset and default styles */
+@use "base/reset";
+@use "base/default";
+
+/* Settings - project variables and font files */
+// @use 'settings/breakpoints'; directly imported in files that use it
+@use "settings/fonts";
+@use "settings/typography";
+@use "settings/colours";
+@use "settings/spacings";
+@use "settings/sizes";
+@use "settings/speeds";
