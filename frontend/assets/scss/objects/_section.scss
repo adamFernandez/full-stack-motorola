@@ -1,21 +1,27 @@
 /* Section */
 
-@use "../mixins";
+@use '../mixins';
 
 .section {
   @include mixins.content;
-  padding-top: var(--moat);
-  padding-bottom: var(--moat);
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
   @include mixins.flex($direction: row) {
     gap: var(--trench);
   }
+  &--left {
+    @include mixins.flex($justify: left);
+    font-size: var(--type-lg);
+    color: var(--dark);
+  }
 }
 section {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--dark);
+  padding-top: var(--gutter);
   padding-bottom: var(--gutter);
 }
 
 .main {
-  padding: 2em;
+  padding: 0 var(--ditch);
   font-family: var(--sans);
 }
