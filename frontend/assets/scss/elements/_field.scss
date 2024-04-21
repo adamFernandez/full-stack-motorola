@@ -1,0 +1,70 @@
+/* Field Input */
+
+@use "../settings/breakpoints";
+@use "../mixins";
+
+.field {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: var(--h-input);
+  margin: var(--gutter) 0;
+
+  &--textarea {
+    height: auto;
+  }
+}
+
+.field__input {
+  width: 100%;
+  height: var(--h-input);
+  padding-left: var(--gutter);
+  font-family: var(--sans);
+  background-color: var(--white);
+  border: 0.1rem solid var(--dark);
+  border-radius: var(--radius-md);
+
+  &::placeholder,
+  &:focus ~ label,
+  &:active ~ label,
+  &:not(:placeholder-shown) ~ label {
+    opacity: 0;
+  }
+
+  &--textarea {
+    width: 100%;
+    height: auto;
+    font-weight: var(--regular);
+    padding-top: var(--gutter);
+  }
+}
+
+.field__select {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  font-size: var(--type-xxs);
+  border: 0.1rem solid var(--dark);
+  border-radius: var(--radius-md);
+}
+
+.field__label,
+.field__error {
+  pointer-events: none;
+  @include mixins.transition;
+  @include mixins.absolute;
+  @include mixins.flex($justify: flex-start);
+  padding: 0 var(--gutter);
+  height: var(--h-input);
+  font-family: var(--sans);
+  // text-transform: uppercase;
+  font-size: var(--type-xxs);
+  color: var(--grey);
+
+  &--textarea {
+    bottom: auto;
+  }
+}
+
+.field__error {
+  @include mixins.flex($justify: flex-end);
+}
