@@ -1,0 +1,19 @@
+/* Table */
+
+table {
+  // border: 1px solid var(--blue);
+  // border-radius: 5px;
+  width: 100%;
+
+  text-align: left;
+  th {
+    padding: var(--runnel) 0;
+    font-weight: var(--bold);
+    border-bottom: 2px solid var(--dark);
+    color: var(--dark);
+  }
+  td {
+    padding: var(--gutter);
+    border-bottom: 1px solid var(--dark);
+  }
+}

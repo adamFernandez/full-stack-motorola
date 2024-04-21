@@ -14,11 +14,3 @@ const { data } = defineProps(["data"]);
     </tr>
   </table>
 </template>
-<style lang="scss">
-td,
-th {
-  padding: 0.4em 0;
-  text-align: left;
-  border-bottom: 1px solid;
-}
-</style>
