@@ -1,0 +1,24 @@
+/* Form */
+
+@use '../settings/breakpoints';
+@use '../mixins';
+
+.form {
+  @include mixins.flex(column, nowrap, flex, flex) {
+    gap: var(--gutter);
+  }
+  // border: 1px solid var(--dark);
+  padding: var(--trench);
+  // margin-bottom: var(--trench);
+  // border-radius: var(--radius-md);
+}
+
+.form__fields {
+  @include mixins.flex(row, flex, flex) {
+    gap: var(--gutter);
+  }
+}
+
+.form__label {
+  margin-bottom: var(--gutter);
+}

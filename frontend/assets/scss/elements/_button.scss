@@ -1,0 +1,33 @@
+/* Button */
+
+@use '../mixins';
+
+.button {
+  padding: var(--gutter) var(--ditch);
+  background-color: transparent;
+  color: var(--dark);
+  border: 0.1rem solid var(--dark);
+  font-family: var(--sans);
+  font-weight: var(--ultra);
+  border-radius: var(--radius-md);
+  display: inline-block;
+  min-width: 9rem;
+  &:hover {
+    background-color: var(--dark);
+    color: var(--white);
+  }
+
+  &--inverted {
+    color: var(--white);
+    border-color: var(--white);
+    &:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+  }
+
+  &:active {
+    background-color: var(--black-dark);
+    color: var(--white);
+  }
+}

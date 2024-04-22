@@ -1,0 +1,11 @@
+/* Visibility */
+
+@mixin visible {
+  visibility: visible;
+  pointer-events: all;
+}
+
+@mixin hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
