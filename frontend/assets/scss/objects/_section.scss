@@ -14,6 +14,16 @@
     font-size: var(--type-lg);
     color: var(--dark);
   }
+  &--counter {
+    @include mixins.flex($direction: row) {
+      gap: var(--runnel);
+    }
+    .selected-page {
+      font-size: var(--type-lg);
+      color: var(--dark);
+    }
+    color: var(--blue);
+  }
 }
 section {
   border-bottom: 3px solid var(--dark);
