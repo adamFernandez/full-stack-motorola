@@ -2,7 +2,7 @@
 const peopleStore = usePeopleStore()
 const { people } = storeToRefs(peopleStore)
 
-const hide = true
+const hide = false
 
 const selectedCountry = ref('')
 const countries = people.value.reduce((a, d) => {
