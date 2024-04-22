@@ -2,6 +2,8 @@
 const peopleStore = usePeopleStore()
 const { people } = storeToRefs(peopleStore)
 
+const hide = true
+
 const selectedCountry = ref('')
 const countries = people.value.reduce((a, d) => {
   if (!a.includes(d.country)) {
@@ -44,6 +46,9 @@ const find = () => {
 </script>
 <template>
   <NuxtLayout>
+    <section :class="hide ? 'hidden' : 'show'">
+      <SectionForm />
+    </section>
     <section class="section--left">
       <h3>Filters</h3>
     </section>
