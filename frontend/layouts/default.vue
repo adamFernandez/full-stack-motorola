@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <div class="main">
-    <Header :heading="'People Search'" />
+    <LayoutHeader :heading="'People'" />
     <slot />
   </div>
 </template>
