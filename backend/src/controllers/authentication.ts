@@ -1,9 +1,9 @@
 import express from 'express'
 
 import { getUserByEmail, createUser } from '../db/users'
-import { random } from '../helpers'
+import { random, authentication } from '../helpers'
 
-export const register = async (reg: express.Request, res: express.Response) => {
+export const register = async (req: express.Request, res: express.Response) => {
   try {
     const { email, password, username } = req.body
 
@@ -27,7 +27,7 @@ export const register = async (reg: express.Request, res: express.Response) => {
       }
     })
 
-    return res.statur(200).json(user).end()
+    return res.status(200).json(user).end()
   } catch (error) {
     console.log(error)
     return res.sendStatus(400)
