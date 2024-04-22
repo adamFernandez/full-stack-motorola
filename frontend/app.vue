@@ -1,29 +1,31 @@
 <script setup>
-const { data } = await useFetch('http://localhost:3500/data.json')
+const peopleStore = usePeopleStore()
+const { people } = storeToRefs(peopleStore)
+
 const selectedCountry = ref('')
-const countries = data.value.reduce((a, d) => {
+const countries = people.value.reduce((a, d) => {
   if (!a.includes(d.country)) {
     a.push(d.country)
   }
   return a
 }, [])
 const selectedRegion = ref('')
-const regions = data.value.reduce((r, d) => {
+const regions = people.value.reduce((r, d) => {
   if (!r.includes(d.region)) {
     r.push(d.region)
   }
   return r
 }, [])
 
-const filtered = ref(data.value)
+const filtered = ref(people.value)
 const filteredData = (country, region, search) => {
   if (country || region)
-    filtered.value = data.value.filter(
+    filtered.value = people.value.filter(
       (c) => c.country === country || c.region === region
     )
 
   if (searchInput.value)
-    filtered.value = data.value.filter(
+    filtered.value = people.value.filter(
       (c) =>
         c.name.toLowerCase().includes(search.toLowerCase()) ||
         c.email.toLowerCase().includes(search.toLowerCase())
@@ -33,7 +35,7 @@ const filteredData = (country, region, search) => {
 }
 const searchInput = ref('')
 const find = () => {
-  filtered.value = data.value.filter(
+  filtered.value = people.value.filter(
     (c) =>
       c.name.toLowerCase().includes(searchInput.value.toLowerCase()) ||
       c.email.toLowerCase().includes(searchInput.value.toLowerCase())
@@ -43,7 +45,7 @@ const find = () => {
 <template>
   <NuxtLayout>
     <section class="section--left">
-      <h3>Filters:</h3>
+      <h3>Filters</h3>
     </section>
     <div class="section">
       <InputSelect
