@@ -9,13 +9,16 @@ export const usePeopleStore = defineStore({
   },
 
   actions: {
-    addPerson(country: string, region: string, name: string, email: string) {
-      this.people.push({
-        country,
-        region,
-        name,
-        email
-      })
+    addPerson(person: object) {
+      this.people = [
+        {
+          country: person.country,
+          region: person.region,
+          name: person.name,
+          email: person.email
+        },
+        ...this.people
+      ]
     }
   },
 
