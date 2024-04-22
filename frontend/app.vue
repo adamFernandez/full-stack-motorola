@@ -68,11 +68,15 @@ const find = () => {
       />
       <InputField :name="'search'" :label="'Search'" v-model="searchInput" />
     </div>
-    <SectionPaginate
+    <!-- <SectionPaginate
       :data="filteredData(selectedCountry, selectedRegion, searchInput)"
       :current="1"
       :increment="10"
-      :total="filteredData(selectedCountry, selectedRegion, searchInput).length"
+      :key="filteredData(selectedCountry, selectedRegion, searchInput).length"
+    /> -->
+    <SectionTable
+      :data="filteredData(selectedCountry, selectedRegion, searchInput)"
     />
+    <!-- :data="data.filter((p, index) => index < to && index >= current)" -->
   </NuxtLayout>
 </template>
