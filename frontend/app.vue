@@ -46,9 +46,10 @@ const find = () => {
 </script>
 <template>
   <NuxtLayout>
-    <section :class="hide ? 'hidden' : 'show'">
-      <SectionForm />
+    <section class="section--left">
+      <h3>Add a new person</h3>
     </section>
+    <SectionForm />
     <section class="section--left">
       <h3>Filters</h3>
     </section>
@@ -67,7 +68,11 @@ const find = () => {
       />
       <InputField :name="'search'" :label="'Search'" v-model="searchInput" />
     </div>
-
-    <Table :data="filteredData(selectedCountry, selectedRegion, searchInput)" />
+    <SectionPaginate
+      :data="filteredData(selectedCountry, selectedRegion, searchInput)"
+      :current="1"
+      :increment="10"
+      :total="filteredData(selectedCountry, selectedRegion, searchInput).length"
+    />
   </NuxtLayout>
 </template>

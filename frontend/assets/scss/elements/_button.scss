@@ -26,8 +26,30 @@
     }
   }
 
+  &--small {
+    padding: var(--gutter) var(--ditch);
+    background-color: var(--white);
+
+    border: 0.1rem solid var(--white);
+    &:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+  }
+
   &:active {
     background-color: var(--black-dark);
     color: var(--white);
+  }
+}
+
+.disabled {
+  color: var(--grey);
+  cursor: default;
+  &:active {
+    color: var(--grey);
+  }
+  &:hover {
+    color: var(--grey);
   }
 }
