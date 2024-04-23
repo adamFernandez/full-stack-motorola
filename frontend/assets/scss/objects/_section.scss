@@ -15,14 +15,18 @@
     color: var(--dark);
   }
   &--counter {
-    @include mixins.flex($direction: row) {
-      gap: var(--runnel);
+    font-size: var(--type-xsm);
+    color: var(--blue);
+    gap: 0;
+    @include mixins.grid() {
+      grid-template-columns: repeat(auto-fit, minmax(2px, 0.25fr));
+      justify-items: center;
+      align-items: center;
     }
     .selected-page {
       font-size: var(--type-lg);
       color: var(--dark);
     }
-    color: var(--blue);
   }
 }
 section {
