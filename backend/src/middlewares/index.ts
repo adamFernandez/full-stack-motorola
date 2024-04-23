@@ -16,13 +16,13 @@ export const isAuthenticated = async (
     const sessionToken = req.cookies[process.env.SECRET]
 
     if (!sessionToken) {
-      return res.sendStatus(400)
+      return res.sendStatus(401)
     }
 
     const existingUser = await getUserBySessionToken(sessionToken)
 
     if (!existingUser) {
-      return res.sendStatus(403)
+      return res.sendStatus(401)
     }
 
     merge(req, { identity: existingUser })
