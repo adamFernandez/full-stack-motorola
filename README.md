@@ -2,6 +2,12 @@
 
 This app will be running Nuxt 3 on the frontend and Node js on the backend
 
+## Visible at AWS EC2 instance at:
+
+```bash
+http://13.42.41.78:3500
+```
+
 ## Frontend
 
 Open the frontend folder and install dependencies. We could use any package manager. I have used pnpm:
