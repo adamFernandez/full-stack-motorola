@@ -32,3 +32,32 @@ Base path: `backend/src`
 - User Schema, Model and actions (db/users.ts)
 - Helper functions for random and authentication token generation (helpers/index.ts)
 - Router: base(router/index.ts), authentication(router/authentication.ts)
+
+## Register user
+
+User registration using Postman. Working
+
+```bash
+http://localhost:8080/auth/register
+```
+
+```json
+{
+  "email": "email@gmail.com",
+  "password": "password",
+  "username": "Username"
+}
+```
+
+## Login
+
+```bash
+http://localhost:8080/auth/login
+```
+
+```json
+{
+  "email": "email@gmail.com",
+  "password": "password"
+}
+```
