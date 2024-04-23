@@ -49,7 +49,10 @@ const find = () => {
     <section class="section--left">
       <h3>Add a new person</h3>
     </section>
-    <SectionForm />
+    <SectionForm
+      :fields="['country', 'region', 'name', 'email']"
+      :buttonLabel="'Add Person'"
+    />
     <section class="section--left">
       <h3>Filters</h3>
     </section>
@@ -76,6 +79,7 @@ const find = () => {
     /> -->
     <SectionTable
       :data="filteredData(selectedCountry, selectedRegion, searchInput)"
+      :cols="['country', 'region', 'name', 'email']"
     />
     <!-- :data="data.filter((p, index) => index < to && index >= current)" -->
   </NuxtLayout>
