@@ -4,7 +4,7 @@ table {
   // border: 1px solid var(--blue);
   // border-radius: 5px;
   width: 100%;
-
+  table-layout: fixed;
   text-align: left;
   th {
     padding: var(--runnel) 0;
@@ -15,5 +15,6 @@ table {
   td {
     padding: var(--gutter);
     border-bottom: 1px solid var(--dark);
+    overflow: scroll;
   }
 }
