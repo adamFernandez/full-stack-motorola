@@ -16,6 +16,12 @@ To run the application:
 pnpm run dev
 ```
 
+Add `.env` file.
+
+```env
+PORT=3500
+```
+
 Application will be running on port 3500
 
 ```bash
