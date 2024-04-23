@@ -1,4 +1,6 @@
 import express from 'express'
+import dotenv from 'dotenv'
+dotenv.config()
 
 import { getUserByEmail, createUser } from '../db/users'
 import { random, authentication } from '../helpers'
@@ -31,7 +33,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save()
 
-    res.cookie('API-SECRET-PASS', user.authentication.sessionToken, {
+    res.cookie(process.env.SECRET, user.authentication.sessionToken, {
       domain: 'localhost',
       path: '/'
     })
