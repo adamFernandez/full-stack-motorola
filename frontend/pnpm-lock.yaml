@@ -21,6 +21,11 @@ dependencies:
     specifier: ^4.3.0
     version: 4.3.2(vue@3.4.23)
 
+devDependencies:
+  '@types/lodash':
+    specifier: ^4.17.0
+    version: 4.17.0
+
 packages:
 
   /@ampproject/remapping@2.3.0:
@@ -1625,6 +1630,10 @@ packages:
     dependencies:
       '@types/node': 20.12.7
     dev: false
+
+  /@types/lodash@4.17.0:
+    resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
+    dev: true
 
   /@types/node@20.12.7:
     resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
