@@ -55,6 +55,5 @@ const resetForm = () => {
         Already registered?
       </button>
     </form>
-    {{ formData }}
   </div>
 </template>
