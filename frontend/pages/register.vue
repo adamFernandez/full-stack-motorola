@@ -45,14 +45,14 @@ const resetForm = () => {
         />
       </div>
       <button type="submit" :class="['button']" @click.prevent="registerUser()">
-        Register User
+        Register
       </button>
       <button
         type="submit"
-        :class="['button']"
+        :class="['button button--small']"
         @click.prevent="navigateTo('/login')"
       >
-        Log in
+        Go to login
       </button>
     </form>
     {{ formData }}
