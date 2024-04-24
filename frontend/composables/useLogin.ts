@@ -1,9 +1,9 @@
-export const useLogin = async (password, email, token) => {
+export const useLogin = async (email, password) => {
   console.log(password, email)
   if (!password || !email) {
     return alert('Fill in all the fields')
   }
-  const response = await useFetch('http://localhost:8080/auth/login', {
+  const res = await $fetch('http://localhost:8080/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -13,6 +13,15 @@ export const useLogin = async (password, email, token) => {
       password: password
     })
   })
+    .then((res) => {
+      console.log('Success! ')
+      console.log('Response: ', res)
+      localStorage.setItem('auth-token', res.authentication.sessionToken)
+      navigateTo('/')
+    })
+    .catch((error) => {
+      console.log('Error:', error)
+    })
 
-  return response
+  return res
 }
