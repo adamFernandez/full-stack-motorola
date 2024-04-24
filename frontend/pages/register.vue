@@ -31,6 +31,8 @@ const resetForm = () => {
           :label="'Email'"
           v-model="formData['email']"
         />
+      </div>
+      <div class="form__fields">
         <InputField
           :type="'password'"
           :name="'password'"
@@ -47,6 +49,8 @@ const resetForm = () => {
       <button type="submit" :class="['button']" @click.prevent="registerUser()">
         Register
       </button>
+    </form>
+    <div class="container">
       <button
         type="submit"
         :class="['button button--small']"
@@ -54,6 +58,6 @@ const resetForm = () => {
       >
         Already registered?
       </button>
-    </form>
+    </div>
   </div>
 </template>

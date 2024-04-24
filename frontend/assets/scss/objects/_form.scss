@@ -4,13 +4,14 @@
 @use '../mixins';
 
 .form {
-  @include mixins.flex(column, nowrap, flex, flex) {
+  @include mixins.flex(column, nowrap, flex) {
     gap: var(--gutter);
   }
-  // border: 1px solid var(--dark);
+  width: 100%;
+  border: 1px solid var(--dark);
   padding: var(--trench);
   // margin-bottom: var(--trench);
-  // border-radius: var(--radius-md);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
 }
 
 .form__fields {

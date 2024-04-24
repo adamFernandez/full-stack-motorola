@@ -28,6 +28,8 @@ const login = async () => {
       <button type="submit" :class="['button']" @click.prevent="login()">
         Login
       </button>
+    </form>
+    <div class="container">
       <button
         type="submit"
         :class="['button button--small']"
@@ -35,6 +37,6 @@ const login = async () => {
       >
         Not registered yet?
       </button>
-    </form>
+    </div>
   </div>
 </template>
