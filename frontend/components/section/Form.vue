@@ -1,4 +1,5 @@
 <script setup>
+defineProps(['fields', 'buttonLabel'])
 const peopleStore = usePeopleStore()
 const formData = ref({})
 const resetForm = () => {
@@ -8,29 +9,17 @@ const resetForm = () => {
 <template>
   <form class="form">
     <div class="form__fields">
-      <InputField
-        :name="'country'"
-        :label="'Country'"
-        v-model="formData['country']"
-      />
-      <InputField
-        :name="'region'"
-        :label="'Region'"
-        v-model="formData['region']"
-      />
-      <InputField :name="'name'" :label="'Name'" v-model="formData['name']" />
-      <InputField
-        :name="'email'"
-        :label="'Email'"
-        v-model="formData['email']"
-      />
+      <template v-for="f in fields">
+        <InputField :name="f" :label="capitalize(f)" v-model="formData[f]" />
+      </template>
     </div>
     <button
+      v-if="buttonLabel"
       type="submit"
       :class="['button']"
       @click.prevent="peopleStore.addPerson(formData), resetForm()"
     >
-      Add Person
+      {{ buttonLabel }}
     </button>
   </form>
 </template>
