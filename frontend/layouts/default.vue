@@ -2,6 +2,8 @@
 <template>
   <div class="main">
     <LayoutHeader :heading="'People'" />
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
   </div>
 </template>
