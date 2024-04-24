@@ -1,19 +1,14 @@
 <script setup>
 const loginFields = ['email', 'password']
-
 const formData = ref({})
 const login = async () => {
-  await useLogin(
-    formData.value.email,
-    formData.value.password,
-    localStorage.getItem('auth-token')
-  )
+  await useLogin(formData.value.email, formData.value.password)
     .then((res) => {
-      console.log(res)
-      // localStorage.setItem(
-      //   'auth-token',
-      //   res.data._rawValue.authentication.password
-      // )
+      console.log(res),
+        localStorage.setItem(
+          'auth-token',
+          res.data._rawValue.authentication.sessionToken
+        )
     })
     .catch((error) => {
       console.log('Error', error)
@@ -31,7 +26,7 @@ const login = async () => {
         <InputField :name="f" :label="capitalize(f)" v-model="formData[f]" />
       </template>
     </div>
-    <button type="submit" :class="['button']" @click.prevent="registerUser()">
+    <button type="submit" :class="['button']" @click.prevent="login()">
       Login
     </button>
   </form>
