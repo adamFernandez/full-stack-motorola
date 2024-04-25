@@ -3,8 +3,13 @@ defineProps(['heading'])
 </script>
 <template>
   <div class="header">
-    <h2>
-      {{ heading }}
-    </h2>
+    <div class="logo">
+      <NuxtLink to="/">
+        <h2>
+          {{ heading }}
+        </h2>
+      </NuxtLink>
+    </div>
+    <LayoutNavigation />
   </div>
 </template>
