@@ -45,41 +45,43 @@ const find = () => {
 }
 </script>
 <template>
-  <section class="section--left">
-    <h3>Add a new person</h3>
-  </section>
-  <SectionForm
-    :fields="['country', 'region', 'name', 'email']"
-    :buttonLabel="'Add Person'"
-  />
+  <div>
+    <section class="section--left">
+      <h3>Add a new person</h3>
+    </section>
+    <SectionForm
+      :fields="['country', 'region', 'name', 'email']"
+      :buttonLabel="'Add Person'"
+    />
 
-  <section class="section--left">
-    <h3>Filters</h3>
-  </section>
-  <div class="section">
-    <InputSelect
-      :name="'Country'"
-      :message="'Filter by country'"
-      :options="countries"
-      v-model="selectedCountry"
-    />
-    <InputSelect
-      :name="'Region'"
-      :message="'Filter by region'"
-      :options="regions"
-      v-model="selectedRegion"
-    />
-    <InputField :name="'search'" :label="'Search'" v-model="searchInput" />
-  </div>
-  <!-- <SectionPaginate
+    <section class="section--left">
+      <h3>Filters</h3>
+    </section>
+    <div class="section">
+      <InputSelect
+        :name="'Country'"
+        :message="'Filter by country'"
+        :options="countries"
+        v-model="selectedCountry"
+      />
+      <InputSelect
+        :name="'Region'"
+        :message="'Filter by region'"
+        :options="regions"
+        v-model="selectedRegion"
+      />
+      <InputField :name="'search'" :label="'Search'" v-model="searchInput" />
+    </div>
+    <!-- <SectionPaginate
+        :data="filteredData(selectedCountry, selectedRegion, searchInput)"
+        :current="1"
+        :increment="10"
+        :key="filteredData(selectedCountry, selectedRegion, searchInput).length"
+      /> -->
+    <SectionTable
       :data="filteredData(selectedCountry, selectedRegion, searchInput)"
-      :current="1"
-      :increment="10"
-      :key="filteredData(selectedCountry, selectedRegion, searchInput).length"
-    /> -->
-  <SectionTable
-    :data="filteredData(selectedCountry, selectedRegion, searchInput)"
-    :cols="['country', 'region', 'name', 'email']"
-  />
-  <!-- :data="data.filter((p, index) => index < to && index >= current)" -->
+      :cols="['country', 'region', 'name', 'email']"
+    />
+    <!-- :data="data.filter((p, index) => index < to && index >= current)" -->
+  </div>
 </template>

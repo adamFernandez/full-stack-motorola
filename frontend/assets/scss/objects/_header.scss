@@ -6,7 +6,7 @@
 .header {
   @include mixins.container;
   @include mixins.sticky();
-  @include mixins.flex($justify: center);
+  @include mixins.flex($justify: space-between);
   @include mixins.transition;
   padding-top: var(--trench);
   padding-bottom: var(--trench);
