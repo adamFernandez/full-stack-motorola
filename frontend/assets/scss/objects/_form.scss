@@ -6,10 +6,10 @@
 .form {
   @include mixins.flex(column, nowrap, flex, $gap: var(--gutter));
   width: 100%;
-  border: 1px solid var(--dark);
+  // border: 1px solid var(--dark);
   padding: var(--trench);
   // margin-bottom: var(--trench);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  // border-radius: 0 0 var(--radius-md) var(--radius-md);
 }
 
 .form__fields {

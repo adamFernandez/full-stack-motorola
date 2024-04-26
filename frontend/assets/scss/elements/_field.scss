@@ -50,8 +50,7 @@
 .field__error {
   pointer-events: none;
   @include mixins.transition;
-  @include mixins.absolute;
-  @include mixins.flex($justify: flex-start);
+  @include mixins.absolute($top: 55%);
   padding: 0 var(--gutter);
   height: var(--h-input);
   font-family: var(--sans);

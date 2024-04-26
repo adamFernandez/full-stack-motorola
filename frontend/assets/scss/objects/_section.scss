@@ -34,7 +34,9 @@ section {
 }
 
 .main {
-  padding: 0 var(--ditch);
+  @include mixins.container;
+  @include mixins.flex($gap: var(--sea), $align: center);
+  padding: 0 var(--sea);
   font-family: var(--sans);
 }
 .container {
