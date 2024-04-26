@@ -1,0 +1,139 @@
+/* Breakpoints */
+
+/* widths */
+$compact: 520px;
+$narrow: 767px; /* 768 is where iPad and iPad Mini starts */
+$wide: 1023px; /* 1024 is where iPad Pro starts */
+$extended: 1700px;
+$ultra: 2100px;
+
+/* heights */
+$letterbox: 450px;
+$short: 750px;
+$tall: 940px;
+
+@mixin compact-down {
+  @media only screen and (max-width: $compact) {
+    @content;
+  }
+}
+
+@mixin compact-up {
+  @media only screen and (min-width: ($compact + 1)) {
+    @content;
+  }
+}
+
+@mixin compact-to-narrow {
+  @media only screen and (min-width: ($compact + 1)) and (max-width: $narrow) {
+    @content;
+  }
+}
+
+@mixin compact-to-extended {
+  @media only screen and (min-width: ($compact + 1)) and (max-width: $extended) {
+    @content;
+  }
+}
+
+@mixin narrow-down {
+  @media only screen and (max-width: $narrow) {
+    @content;
+  }
+}
+
+@mixin narrow-up {
+  @media only screen and (min-width: ($narrow + 1)) {
+    @content;
+  }
+}
+
+@mixin narrow-to-wide {
+  @media only screen and (min-width: ($narrow + 1)) and (max-width: $wide) {
+    @content;
+  }
+}
+
+@mixin wide-down {
+  @media only screen and (max-width: $wide) {
+    @content;
+  }
+}
+
+@mixin wide-up {
+  @media only screen and (min-width: ($wide + 1)) {
+    @content;
+  }
+}
+
+@mixin wide-to-extended {
+  @media only screen and (min-width: ($wide + 1)) and (max-width: $extended) {
+    @content;
+  }
+}
+
+@mixin extended-down {
+  @media only screen and (max-width: $extended) {
+    @content;
+  }
+}
+
+@mixin extended-up {
+  @media only screen and (min-width: ($extended + 1)) {
+    @content;
+  }
+}
+
+@mixin extended-to-ultra {
+  @media only screen and (min-width: ($extended + 1)) and (max-width: $ultra) {
+    @content;
+  }
+}
+
+@mixin ultra-down {
+  @media only screen and (max-width: $ultra) {
+    @content;
+  }
+}
+
+@mixin ultra-up {
+  @media only screen and (min-width: ($ultra + 1)) {
+    @content;
+  }
+}
+
+@mixin short-down {
+  @media only screen and (max-height: $short) {
+    @content;
+  }
+}
+
+@mixin short-up {
+  @media only screen and (min-height: ($short + 1)) {
+    @content;
+  }
+}
+
+@mixin letterbox-down {
+  @media only screen and (max-height: $letterbox) {
+    @content;
+  }
+}
+
+@mixin letterbox-up {
+  @media only screen and (min-height: ($letterbox + 1)) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
