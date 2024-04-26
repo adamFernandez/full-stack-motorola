@@ -1,8 +1,9 @@
 <script setup></script>
 <template>
   <div class="main">
-    <LayoutHeader :heading="'People'" />
     <div class="container">
+      <LayoutHeader :heading="'People'" />
+
       <slot />
     </div>
   </div>

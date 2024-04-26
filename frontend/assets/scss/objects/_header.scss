@@ -4,7 +4,7 @@
 @use '../settings/breakpoints';
 
 .header {
-  @include mixins.container;
+  @include mixins.content;
   @include mixins.sticky();
   @include mixins.flex(
     $justify: space-between,
@@ -12,8 +12,7 @@
     $align: center
   );
   @include mixins.transition;
-  padding-top: var(--trench);
-  padding-bottom: var(--trench);
+  padding: var(--trench) 0;
   text-transform: uppercase;
   font-size: var(--type-xl);
   color: var(--dark);

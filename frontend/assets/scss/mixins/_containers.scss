@@ -4,11 +4,7 @@
 
 @mixin container {
   width: 100%;
-  @media only screen and (max-width: breakpoints.$wide) {
-    padding-right: var(--ha-ha);
-    padding-left: var(--ha-ha);
-  }
-  @media only screen and (min-width: (breakpoints.$wide + 1)) {
+  @media only screen and (max-width: breakpoints.$extended) {
     padding-right: var(--moat);
     padding-left: var(--moat);
   }
