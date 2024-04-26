@@ -9,7 +9,7 @@
     </button>
     <button
       type="submit"
-      :class="['button']"
+      :class="['button button--small']"
       @click.prevent="navigateTo('/register')"
     >
       Register

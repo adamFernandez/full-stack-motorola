@@ -30,9 +30,9 @@
   &--small {
     padding: var(--love);
     min-width: 1.5rem;
-    background-color: var(--white);
+    // background-color: var(--white);
 
-    border: 0.1rem solid var(--white);
+    border: none;
     &:hover {
       background-color: var(--white);
       color: var(--black);
