@@ -6,9 +6,7 @@
   @include mixins.content;
   padding-top: var(--gutter);
   padding-bottom: var(--gutter);
-  @include mixins.flex($direction: row) {
-    gap: var(--trench);
-  }
+  @include mixins.flex($direction: row, $gap: var(--trench));
   &--left {
     @include mixins.flex($justify: left);
     font-size: var(--type-lg);
@@ -40,9 +38,11 @@ section {
   font-family: var(--sans);
 }
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-filt, minmax(250px, 0.5fr));
-  justify-self: center;
-  justify-content: center;
-  justify-items: center;
+  @include mixins.container;
+  @include mixins.flex($align: center, $gap: var(--runnel));
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // justify-self: center;
+  // justify-content: center;
+  // justify-items: center;
 }

@@ -4,7 +4,5 @@
 @use '../settings/breakpoints';
 
 .pagination {
-  @include mixins.flex(row, flex, flex, $justify: space-around) {
-    gap: var(--gutter);
-  }
+  @include mixins.flex(row, flex, flex, space-around, var(--gutter));
 }

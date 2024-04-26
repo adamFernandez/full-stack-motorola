@@ -1,15 +1,30 @@
 /* Flex */
 
 @mixin flex(
-  $direction: row,
+  $direction: column,
+  $align: flex-start,
+  $justify: flex-start,
+  $gap: null,
   $wrap: nowrap,
-  $align: center,
-  $justify: center,
   $display: flex
 ) {
   display: $display;
   flex-flow: $direction $wrap;
   align-items: $align;
   justify-content: $justify;
-  @content;
+  gap: $gap;
+  // Safari 14 unsupported gap fix
+  @if $gap != null {
+    @supports not (aspect-ratio: auto) {
+      @if $direction != column {
+        & > *:not(:first-child) {
+          margin-left: $gap;
+        }
+      } @else {
+        & > *:not(:last-child) {
+          margin-bottom: $gap;
+        }
+      }
+    }
+  }
 }

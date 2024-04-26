@@ -4,9 +4,7 @@
 @use '../mixins';
 
 .form {
-  @include mixins.flex(column, nowrap, flex) {
-    gap: var(--gutter);
-  }
+  @include mixins.flex(column, nowrap, flex, $gap: var(--gutter));
   width: 100%;
   border: 1px solid var(--dark);
   padding: var(--trench);
@@ -15,9 +13,7 @@
 }
 
 .form__fields {
-  @include mixins.flex(row, flex, flex) {
-    gap: var(--gutter);
-  }
+  @include mixins.flex(row, flex, flex, $gap: var(--gutter));
 }
 
 .form__label {
