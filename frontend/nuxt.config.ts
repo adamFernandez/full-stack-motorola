@@ -8,7 +8,9 @@ export default defineNuxtConfig({
     dirs: ['stores']
   },
   runtimeConfig: {
-    apiUrl: process.env.API_URL
+    public: {
+      apiUrl: process.env.API_URL
+    }
   },
   server: true,
   router: {
