@@ -1,9 +1,12 @@
 export const useLogin = async (email, password) => {
+  const config = useRuntimeConfig()
+  const cookieStore = useCookieStore
+  const { authToken } = storeToRefs(cookieStore)
   console.log(password, email)
   if (!password || !email) {
     return alert('Fill in all the fields')
   }
-  const res = await $fetch('http://localhost:8080/auth/login', {
+  const res = await $fetch(fetch(`${config.apiUrl}/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -16,7 +19,7 @@ export const useLogin = async (email, password) => {
     .then((res) => {
       console.log('Success! ')
       console.log('Response: ', res)
-      localStorage.setItem('auth-token', res.authentication.sessionToken)
+      authToken.storeAuthToken(res.authentication.sessionToken)
       navigateTo('/')
     })
     .catch((error) => {

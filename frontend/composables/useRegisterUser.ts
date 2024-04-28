@@ -4,13 +4,14 @@ export const useRegisterUser = async (
   password,
   password_check
 ) => {
+  const config = useRuntimeConfig()
   if (!username || !password || !password_check || !email) {
     return alert('Fill in all the fields')
   }
   if (password !== password_check) {
     return alert('Passwords do not match')
   }
-  const res = await fetch('http://localhost:8080/auth/register', {
+  const res = await fetch(`${config.apiUrl}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

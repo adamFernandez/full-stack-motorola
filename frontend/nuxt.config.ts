@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores']
   },
-  css: ['@/assets/scss/global.scss'],
-  server: false
+  runtimeConfig: {
+    apiUrl: process.env.API_URL
+  },
+  server: true,
+  router: {
+    middleware: ['auth']
+  },
+  css: ['@/assets/scss/global.scss']
 })
