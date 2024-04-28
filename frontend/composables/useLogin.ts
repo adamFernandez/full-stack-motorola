@@ -6,7 +6,7 @@ export const useLogin = async (email, password) => {
   if (!password || !email) {
     return alert('Fill in all the fields')
   }
-  const res = await $fetch(fetch(`${config.apiUrl}/auth/login`, {
+  const res = await $fetch(fetch(`${config.apiUrl}/auth/login`), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
