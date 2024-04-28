@@ -11,7 +11,7 @@ export const useRegisterUser = async (
   if (password !== password_check) {
     return alert('Passwords do not match')
   }
-  const res = await fetch(`${config.apiUrl}/auth/register`, {
+  const res = await fetch(`${config.public.apiUrl}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
