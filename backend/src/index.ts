@@ -26,9 +26,10 @@ app.use(bodyParser.json())
 const server = http.createServer(app)
 
 const port = process.env.PORT
+const host = process.env.HOST
 
-server.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}/`)
+server.listen(parseInt(port), host, () => {
+  console.log(`Server running on http://${host}:${port}/`)
 })
 
 const MONGO_URL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@full-stack.qjwdqyp.mongodb.net/?retryWrites=true&w=majority&appName=full-stack`
