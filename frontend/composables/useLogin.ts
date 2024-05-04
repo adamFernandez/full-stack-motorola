@@ -1,6 +1,6 @@
 export const useLogin = async (email, password) => {
   const config = useRuntimeConfig()
-  const cookieStore = useCookieStore
+  const cookieStore = useCookieStore()
   const { authToken } = storeToRefs(cookieStore)
   console.log(password, email)
   if (!password || !email) {
@@ -16,15 +16,16 @@ export const useLogin = async (email, password) => {
       password: password
     })
   })
-    .then((res) => {
-      console.log('Success! ')
-      console.log('Response: ', res)
-      authToken.storeAuthToken(res.authentication.sessionToken)
-      navigateTo('/')
+    .then((r) => {
+      r.json().then((x) => {
+        console.log('Success! ')
+        console.log('Response: ', x)
+        cookieStore.storeAuthToken(x.authentication)
+        navigateTo('/')
+      })
     })
     .catch((error) => {
       console.log('Error:', error)
     })
-
   return res
 }
