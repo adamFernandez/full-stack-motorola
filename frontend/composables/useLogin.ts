@@ -16,16 +16,19 @@ export const useLogin = async (email, password) => {
       password: password
     })
   })
+  res
+    .json()
     .then((r) => {
-      r.json().then((x) => {
-        console.log('Success! ')
-        console.log('Response: ', x)
-        cookieStore.storeAuthToken(x.authentication)
-        navigateTo('/')
+      console.log('Success! ')
+      // console.log('Response: ', r)
+      cookieStore.storeAuthToken(r.authentication.sessionToken)
+      navigateTo({
+        path: '/',
+        query: { logged: true }
       })
     })
     .catch((error) => {
       console.log('Error:', error)
+      return false
     })
-  return res
 }
