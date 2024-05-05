@@ -2,7 +2,7 @@
   <span class="field">
     <input
       :value="modelValue"
-      :type="fieldType()"
+      :type="type"
       :name="name"
       :placeholder="label"
       :required="required"
@@ -24,17 +24,7 @@ const props = defineProps({
   modelValue: String,
   error: String,
   inputState: String,
-});
-defineEmits(["update:modelValue"]);
-const fieldName = ref(props.field?.displayName);
-
-const fieldType = () => {
-  const type =
-    (fieldName.value === "Name" && "text") ||
-    (fieldName.value === "SingleLineText" && "text") ||
-    (fieldName.value === "Email" && "email") ||
-    (fieldName.value === "Number" && "number") ||
-    (fieldName.value === "Phone" && "tel");
-  return type;
-};
+  type: String
+})
+defineEmits(['update:modelValue'])
 </script>
